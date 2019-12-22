@@ -24,6 +24,25 @@ namespace AspNetCoreAdvanced.Controllers
             return View();
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModels model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await userManager.FindByEmailAsync(model.Email);
+                if(user == null)
+                {
+                    return View("Error");
+                }
+                else
+                {
+                    await signInManager.SignInAsync(user, isPersistent: model.RememberMe);
+                    return RedirectToAction("Index", "Dashboard");
+                }
+            }
+            return View(model);
+        }
+
         [HttpGet]
         public IActionResult Register()
         {
@@ -46,7 +65,11 @@ namespace AspNetCoreAdvanced.Controllers
                     await signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction("Index", "Home");
                 }
-                
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+
             }
             return View(model: registerViewModel);
         }
