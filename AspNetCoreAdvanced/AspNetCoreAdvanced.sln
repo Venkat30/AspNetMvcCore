@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreAdvanced", "AspNetCoreAdvanced\AspNetCoreAdvanced.csproj", "{EAFCFF75-BA1E-44B3-B93E-87D38772ED92}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreAdvanced.Test", "AspNetCoreAdvanced.Test\AspNetCoreAdvanced.Test.csproj", "{2855F431-A02E-4354-BB2B-D2C104D29323}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{EAFCFF75-BA1E-44B3-B93E-87D38772ED92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAFCFF75-BA1E-44B3-B93E-87D38772ED92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAFCFF75-BA1E-44B3-B93E-87D38772ED92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2855F431-A02E-4354-BB2B-D2C104D29323}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2855F431-A02E-4354-BB2B-D2C104D29323}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2855F431-A02E-4354-BB2B-D2C104D29323}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2855F431-A02E-4354-BB2B-D2C104D29323}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
