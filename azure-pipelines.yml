@@ -45,13 +45,18 @@ steps:
   inputs:
     command: 'publish'
     projects: '**/*.csproj'
-    publishWebProjects: false
-    arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
+    publishWebProjects: true
+    arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: true
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact'
-  condition: succeeded()
+    inputs:
+      pathToPublish: $(Build.ArtifactStagingDirectory)
+      artifactName: AspNetCoreExample
+# - task: PublishBuildArtifacts@1
+#   displayName: 'Publish Artifact'
+#   condition: succeeded()
 
 
 # - task: NuGetCommand@2
