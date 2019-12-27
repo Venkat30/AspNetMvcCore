@@ -51,9 +51,10 @@ steps:
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact'
-    inputs:
-      pathToPublish: $(Build.ArtifactStagingDirectory)
-      artifactName: AspNetCoreExample
+  inputs:
+    pathToPublish: '$(Build.ArtifactStagingDirectory)' 
+    artifactName: AspNetCoreExample
+
 # - task: PublishBuildArtifacts@1
 #   displayName: 'Publish Artifact'
 #   condition: succeeded()
