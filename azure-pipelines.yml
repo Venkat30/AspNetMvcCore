@@ -13,7 +13,7 @@ variables:
   # solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  wwwrootDir: 'wwwroot'
+  wwwrootDir: 'AspNetCoreApp'
 
 steps:
 - task: NuGetToolInstaller@1
