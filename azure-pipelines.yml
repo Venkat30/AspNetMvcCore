@@ -13,7 +13,7 @@ variables:
   # solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  wwwrootDir: 'AspNetCoreApp'
+  wwwrootDir: 'AspNetCoreApp/wwwroot'
 
 steps:
 - task: NuGetToolInstaller@1
@@ -53,11 +53,13 @@ steps:
 - task: WhiteSource Bolt@19
   displayName: 'Run WhiteSource Bolt'
 
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact'
-  inputs:
-    pathToPublish: '$(Build.ArtifactStagingDirectory)' 
-    artifactName: AspNetCoreExample
+- publish: '$(Build.ArtifactStagingDirectory)'
+  artifact: drop
+# - task: PublishBuildArtifacts@1
+#   displayName: 'Publish Artifact'
+#   inputs:
+#     pathToPublish: '$(Build.ArtifactStagingDirectory)' 
+#     artifactName: drop
 
 # - task: PublishBuildArtifacts@1
 #   displayName: 'Publish Artifact'
